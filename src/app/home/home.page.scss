@@ -1,3 +1,15 @@
+ion-content, ion-header, ion-toolbar {
+  --background: #F2F2F2;
+}
+
+ion-title {
+  color: var(--ion-color-primary);
+}
+
+ion-icon {
+  color: #fff;
+}
+
 ion-input.custom {
   --background: transparent;
   --color: #a6a7a8;

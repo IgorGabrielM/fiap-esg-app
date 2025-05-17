@@ -1,32 +1,22 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title class="font-bold">Materiais</ion-title>
+    <ion-title class="font-bold">Rank</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-segment [value]="valueSegment">
-    <ion-segment-button value="Materiais" (click)="setValueDoSegment('Materiais')">
-      <div class="flex gap-2 items-center justify-center">
-        <ion-icon name="clipboard" class="text-xl" [color]="valueSegment === 'Materiais' ? 'primary' : ''"></ion-icon>
-        <ion-label>Materiais</ion-label>
-      </div>
-    </ion-segment-button>
-    <ion-segment-button value="Conteudos" (click)="setValueDoSegment('Conteudos')">
-      <div class="flex gap-2 items-center justify-center">
-        <ion-icon name="library" class="text-xl" [color]="valueSegment === 'Conteudos' ? 'primary' : ''"></ion-icon>
-        <ion-label>Conteúdos</ion-label>
-      </div>
-    </ion-segment-button>
-  </ion-segment>
-
-  <div *ngIf="valueSegment === 'Materiais'" class="w-full h-fit min-h-full flex bg-secondary">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large" class="font-bold">Rank</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <div *ngIf="valueSegment === 'Materiais'" class="w-full h-fit min-h-full flex">
     <div class="w-11/12 mx-auto mb-2">
       <div class="w-full h-fit flex flex-col gap-2">
         <div class="w-full flex flex-col justify-content-center  rounded-md text-gray-400 mt-2 ">
           <div class="flex flex-col gap-4">
-            <div *ngIf="materiais.length === 0" class="text-white font-bold">
-              <span>Nenhum material disponível...</span>
+            <div *ngIf="materiais.length === 0" class="text-primary opacity-60 font-bold">
+              <span>Nenhum usuário encontrado...</span>
             </div>
             <div *ngFor="let material of materiais" class="text-white border-2 border-gray-400 p-2 rounded-lg">
               <div class="flex justify-between items-center mx-1">
@@ -52,7 +42,7 @@
   </div>
 
 
-  <div *ngIf="valueSegment === 'Conteudos'" class="w-full h-fit min-h-full flex bg-secondary">
+  <div *ngIf="valueSegment === 'Conteudos'" class="w-full h-fit min-h-full flex">
     <div class="w-11/12 mx-auto mb-2">
       <div class="w-full h-fit flex flex-col gap-2">
         <div class="w-full flex flex-col justify-content-center  rounded-md text-gray-400 mt-2 ">

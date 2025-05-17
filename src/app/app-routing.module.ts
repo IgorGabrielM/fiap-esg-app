@@ -17,14 +17,6 @@ const routes: Routes = [
     canActivate: [AuthGuard],
   },
   {
-    path: 'roadmap',
-    loadChildren: () => import('./roadmap/roadmap.module').then( m => m.RoadmapPageModule)
-  },
-  {
-    path: 'cursos',
-    loadChildren: () => import('./cursos/cursos.module').then( m => m.CursosPageModule)
-  },
-  {
     path: 'user',
     loadChildren: () => import('./user/user.module').then( m => m.UserPageModule)
   },

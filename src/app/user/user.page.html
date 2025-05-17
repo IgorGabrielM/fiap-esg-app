@@ -7,28 +7,28 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">user</ion-title>
+      <ion-title size="large">Usuário</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <div class="w-full h-fit flex justify-center bg-secondary pt-8">
+  <div class="w-full h-fit flex justify-center pt-8">
     <div *ngIf="!user?.imageUrl || !user?.birthdate" class="h-screen">
       <div class="w-full flex flex-col items-center justify-center mt-2">
         <img
           src="https://static.vecteezy.com/system/resources/previews/008/442/086/non_2x/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg"
           alt="Imagem do usuário"
-          class="w-[150px] h-[150px] object-cover rounded-xl"
+          class="w-[150px] h-[150px] object-cover rounded-xl shadow-lg"
         />
         <span *ngIf="user?.name" class="font-bold text-2xl text-white mt-2">{{ user?.name }}</span>
       </div>
 
-      <div class="w-full flex items-center justify-center text-red-500 mt-4">
+      <div class="w-full flex items-center justify-center text-primary opacity-70 mt-4">
         <ion-icon name="alert-circle" class="text-xl mx-2"></ion-icon>
-        <span class="font-bold text-lg text-center">Seu usuário não esta completo...</span>
+        <span class="font-bold text-lg text-center">Seu usuário não esta completo</span>
         <ion-icon name="alert-circle" class="text-xl mx-2"></ion-icon>
       </div>
       <div class="w-full flex justify-center mt-1">
-        <ion-button (click)="completeUser()" color="danger" class="font-bold">Completar cadastro</ion-button>
+        <ion-button (click)="completeUser()" color="primary" class="font-bold shadow-md rounded-2xl">Completar cadastro</ion-button>
       </div>
     </div>
     <div *ngIf="!(!user?.imageUrl || !user?.birthdate)" class="text-white flex flex-col gap-2 items-center">
@@ -96,8 +96,8 @@
     </div>
   </div>
 
-  <ion-fab slot="fixed" vertical="bottom" horizontal="end" (click)="exit()">
-    <ion-fab-button color="danger">
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end" (click)="exit()" class="rounded-full shadow-md">
+    <ion-fab-button color="secondary">
       <ion-icon name="log-out" class="text-black"></ion-icon>
     </ion-fab-button>
   </ion-fab>

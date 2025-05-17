@@ -12,6 +12,9 @@
     </ion-toolbar>
   </ion-header>
   <div class="p-[16px] flex flex-col gap-4">
+    <div *ngIf="posts.length === 0" class="text-primary opacity-60 font-bold -mt-2">
+      <span>Nenhum post encontrado...</span>
+    </div>
     <app-card-post *ngFor="let post of posts" [post]="post"></app-card-post>
   </div>
   <ion-fab slot="fixed" vertical="bottom" horizontal="end">
