@@ -3,8 +3,6 @@ import {AuthModel, AuthService} from "../data/services/auth.service";
 import {UserModel} from "../data/models/user.model";
 import {ActivatedRoute, Router} from "@angular/router";
 import {AlertController, LoadingController, ToastController} from "@ionic/angular";
-import {InterestModel} from "../data/models/interest.model";
-import {InterestService} from "../data/services/insterest.service";
 import {FileSystemImageService} from "../data/services/file-system-image.service";
 import {ImageService} from "../data/services/image.service";
 
@@ -18,12 +16,10 @@ export class SignUpPage implements OnInit {
 
   particles: any[] = [];
   particleCount = 100;
-  interests: InterestModel[] = [];
   idToEdit: number;
 
   constructor(
     private authService: AuthService,
-    private interestService: InterestService,
     private alertController: AlertController,
     private fileSystemImageService: FileSystemImageService,
     private imageService: ImageService,

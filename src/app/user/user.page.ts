@@ -2,11 +2,9 @@ import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
 import {UserModel} from "../data/models/user.model";
 import {PostModel} from "../data/models/post.model";
-import {InterestModel} from "../data/models/interest.model";
 import {MediaModel} from "../data/models/media.model";
 import {MediaService} from "../data/services/media.service";
 import {AuthService} from "../data/services/auth.service";
-import {InterestService} from "../data/services/insterest.service";
 import {LoadingController} from "@ionic/angular";
 
 @Component({
@@ -17,7 +15,6 @@ import {LoadingController} from "@ionic/angular";
 export class UserPage implements OnInit {
   user: UserModel
   posts: PostModel[] = [];
-  interests: InterestModel[] = [];
   cursos: MediaModel[] = []
   bgRankClass: string;
   borderRankClass: string;
@@ -26,7 +23,6 @@ export class UserPage implements OnInit {
 
   constructor(
     private router: Router,
-    private interestService: InterestService,
     private authService: AuthService,
     private mediaService: MediaService,
     private loadingCtrl: LoadingController,
@@ -59,11 +55,6 @@ export class UserPage implements OnInit {
         }
       })
 
-      const interestPromises = this.user.interests.map((int) => {
-        return this.interestService.find(int);
-      });
-
-      this.interests = await Promise.all(interestPromises);
       this.getRankClass();
       loading.dismiss()
     })

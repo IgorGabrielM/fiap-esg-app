@@ -7,7 +7,7 @@ import {RoadmapModel} from "../models/roadmap.model";
   providedIn: 'root',
 })
 export class RoadmapService {
-  private apiUrl = 'https://study-space-1beb84dc5047.herokuapp.com/roadmaps'; // URL da sua API
+  private apiUrl = 'https://esg-project-server-8ce870babc5e.herokuapp.com/roadmaps'; // URL da sua API
 
   constructor(private http: HttpClient) {}
 

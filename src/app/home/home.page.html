@@ -27,7 +27,7 @@
       <ion-header [translucent]="true">
         <ion-toolbar>
           <ion-title>Criar post</ion-title>
-          <ion-icon (click)="changeModal(false)" name="close-circle" slot="end" class="text-2xl mr-4"></ion-icon>
+          <ion-icon (click)="changeModal(false)" name="close-circle" slot="end" class="text-2xl text-primary mr-4"></ion-icon>
         </ion-toolbar>
       </ion-header>
       <ion-content>
@@ -50,13 +50,13 @@
           required
         ></ion-textarea>
 
-        <div (click)="selectImage()" class="w-full h-52 mx-auto my-2 flex justify-center items-center border-2 border-gray-400 rounded-lg relative">
+<!--        <div (click)="selectImage()" class="w-full h-52 mx-auto my-2 flex justify-center items-center border-2 border-gray-400 rounded-lg relative">
           <ion-icon *ngIf="!post.imageUrl" name="image" class="text-9xl"></ion-icon>
           <img *ngIf="post.imageUrl" [src]="post.imageUrl" class="w-full h-full rounded-lg object-cover">
           <div  class="absolute bg-primary -bottom-3 -right-3 w-7 h-7 rounded-full text-white flex justify-center ion-text-center">
             <ion-icon name="pencil" class="text-md mt-1.5"></ion-icon>
           </div>
-        </div>
+        </div>-->
 
         <ion-button fill="outline" (click)="changeModal(false)">Cancelar</ion-button>
         <ion-button (click)="onSubmit()" class="font-bold">Enviar</ion-button>

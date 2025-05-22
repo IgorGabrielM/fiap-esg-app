@@ -13,14 +13,14 @@ export class CommentsService {
 
   async create(payload: CommentModel): Promise<void> {
     try {
-      const response = await this.http.post<CommentModel>('https://study-space-1beb84dc5047.herokuapp.com/post-comments', payload).toPromise();
+      const response = await this.http.post<CommentModel>('https://esg-project-server-8ce870babc5e.herokuapp.com/post-comments', payload).toPromise();
     } catch (error) {
     }
   }
 
   async list(): Promise<void> {
     try {
-      const response = await this.http.get<CommentModel>('https://study-space-1beb84dc5047.herokuapp.com/posts').toPromise();
+      const response = await this.http.get<CommentModel>('https://esg-project-server-8ce870babc5e.herokuapp.com/posts').toPromise();
     } catch (error) {
     }
   }

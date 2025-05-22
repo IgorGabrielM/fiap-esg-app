@@ -14,7 +14,7 @@ export class RecursoService {
 
   async list(): Promise<RecursoModel[]> {
     try {
-      return await this.http.get<any[]>('https://study-space-1beb84dc5047.herokuapp.com/resources').toPromise();
+      return await this.http.get<any[]>('https://esg-project-server-8ce870babc5e.herokuapp.com/resources').toPromise();
     } catch (error) {
       return Promise.reject(error);
     }
