@@ -23,6 +23,7 @@ export class ModalCommentComponent  implements OnInit {
   ) { }
 
   ngOnInit() {
+    console.log(this.post)
   }
 
   ionViewDidEnter() {

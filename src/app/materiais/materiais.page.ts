@@ -33,28 +33,11 @@ export class MateriaisPage implements OnInit {
 
   ngOnInit() {
     this.loadUsers();
-    // this.loadUser();
-    // this.loadMedia();
-  }
-
-  ionViewWillEnter() {
-    // this.loadUser();
-    // this.loadMedia()
   }
 
   async loadUsers() {
     this.authService.listUserByRank().then(async (usrs) => {
       this.users = usrs.sort((a, b) => a.userRank - b.userRank);
-      console.log(this.users);
-    })
-  }
-
-  loadMedia(){
-    const userToken = localStorage.getItem('userId');
-    this.mediaService.list().then((res) => {
-      if(res?.length > 0){
-        this.cursos = res.filter((curso) => curso?.users[0]?.user?.idUser.toString() == userToken.toString()).reverse().filter((r) => r.type === 'Curso');
-      }
     })
   }
 
@@ -64,5 +47,4 @@ export class MateriaisPage implements OnInit {
     this.router.navigate(['../'])
     setTimeout(() => {location.reload()}, 500)
   }
-
 }
