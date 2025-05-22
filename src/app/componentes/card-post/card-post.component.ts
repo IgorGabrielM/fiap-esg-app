@@ -19,10 +19,10 @@ export class CardPostComponent  implements OnInit {
     private modalCtrl: ModalController
   ) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 
   addLike() {
-    console.log('like')
     if (this.isLiked()) {
       const userId = Number(localStorage.getItem('userId'));
       const payload = {
@@ -44,7 +44,6 @@ export class CardPostComponent  implements OnInit {
   }
 
   async openCommentDialog(){
-    console.log('test')
     const modal = await this.modalCtrl.create({
       component: ModalCommentComponent,
       componentProps: {

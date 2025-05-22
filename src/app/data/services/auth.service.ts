@@ -38,6 +38,14 @@ export class AuthService {
     }
   }
 
+  async listUserByRank(): Promise<UserModel[]> {
+    try {
+      return await this.http.get<UserModel[]>(`https://esg-project-server-8ce870babc5e.herokuapp.com/users/rank`).toPromise();
+    } catch (error) {
+      return Promise.reject(error);
+    }
+  }
+
   async find(id): Promise<UserModel> {
     try {
       return await this.http.get<UserModel>(`https://esg-project-server-8ce870babc5e.herokuapp.com/users/${id}`).toPromise();

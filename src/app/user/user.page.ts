@@ -24,18 +24,15 @@ export class UserPage implements OnInit {
   constructor(
     private router: Router,
     private authService: AuthService,
-    private mediaService: MediaService,
     private loadingCtrl: LoadingController,
   ) { }
 
   ngOnInit() {
     this.loadUser();
-    this.loadMedia();
   }
 
   ionViewWillEnter() {
     this.loadUser();
-    this.loadMedia()
   }
 
   async loadUser() {
@@ -46,26 +43,8 @@ export class UserPage implements OnInit {
     const userToken = localStorage.getItem('userId');
     this.authService.find(userToken).then(async (usr) => {
       this.user = usr;
-      console.log(usr);
-
-      this.user.posts = this.user.posts.map((post) => {
-        return {
-          ...post,
-          user: usr
-        }
-      })
-
       this.getRankClass();
       loading.dismiss()
-    })
-  }
-
-  loadMedia(){
-    const userToken = localStorage.getItem('userId');
-    this.mediaService.list().then((res) => {
-      if(res?.length > 0){
-        this.cursos = res.filter((curso) => curso?.users[0]?.user?.idUser.toString() == userToken.toString()).reverse().filter((r) => r.type === 'Curso');
-      }
     })
   }
 

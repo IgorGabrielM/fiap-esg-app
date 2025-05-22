@@ -35,7 +35,7 @@ export class HomePage implements OnInit {
 
   loadPosts(){
     this.postService.list().then(posts => {
-      this.posts = posts
+      this.posts = posts.reverse()
     });
   }
 

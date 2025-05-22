@@ -27,7 +27,7 @@
       <ion-header [translucent]="true">
         <ion-toolbar>
           <ion-title>Criar post</ion-title>
-          <ion-icon (click)="changeModal(false)" name="close-circle" slot="end" class="text-2xl text-primary mr-4"></ion-icon>
+          <ion-icon (click)="changeModal(false)" name="close-circle" slot="end" class="text-2xl bg-primary p-2 rounded text-primary mr-4"></ion-icon>
         </ion-toolbar>
       </ion-header>
       <ion-content>
@@ -42,7 +42,7 @@
           required
         ></ion-input>
         <ion-textarea
-          label="Compartilhe seus conhecimentos"
+          label="Compartilhe suas ideias"
           labelPlacement="floating"
           class="custom border border-[#595959] rounded-[4px] px-2"
           [(ngModel)]="post.text"
